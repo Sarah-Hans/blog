@@ -1,5 +1,14 @@
 <?php
+//voir les erreurs
+error_reporting (E_ALL);
+ini_set('display_errors', true);
+ini_set('html_errors', false);
+ini_set('display_startup_errors',true);
+ini_set('log_errors', false);
+error_reporting (E_ALL);
+ini_set('display_errors', true);
 
+//appel à la base de données
 require 'config/database.php';
 //mise en buffer
 ob_start();
