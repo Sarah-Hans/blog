@@ -1,4 +1,6 @@
 <?php
+
+require 'config/database.php';
 //mise en buffer
 ob_start();
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_URL);
