@@ -1,0 +1,31 @@
+p {
+    font-family : verdana;
+    font-size : 12px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family : 'Montez', cursive;
+}
+
+main {
+    width: 900px;
+    margin: auto;
+}
+.home_post {
+
+}
+.post_header  {
+
+}
+
+.post_title {
+    font-size: 36px;
+    margin-bottom: 0em;
+}
+
+.post_author {
+    font-weight : bold;
+}
+
+.post_content {
+    margin-top: 30px;
+}

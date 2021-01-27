@@ -1,8 +1,8 @@
 <?php
 
 //Fonction qui sélectionne les 10 derniers articles dans la base et les affiche
-function lastBlogPosts($db) {
-    $posts = $db->query('SELECT title, text, nickname
+function lastBlogPosts($pdo) {
+    $posts = $pdo->query('SELECT title, text, nickname
 FROM posts INNER JOIN authors
                       ON posts.authors_id = authors.id
 ORDER BY publication_date_start DESC
