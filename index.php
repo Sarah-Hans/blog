@@ -13,7 +13,7 @@ require 'config/database.php';
 
 $map = [
     'home' => 'homeController.php',
-    'post' =>'post.php',
+    'blogpost' =>'blogPostController.php',
     '404' => '404.php'
 ];
 //Condition qui détermine le contenu à afficher en fonction des paramètres $action demandés (ou non)
