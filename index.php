@@ -27,4 +27,4 @@ if(filter_has_var(INPUT_GET,'action')){
    $fichier = $map['home'];
 }
 
-include 'app/controllers/' . $fichier;
+require 'app/controllers/' . $fichier;
