@@ -29,6 +29,8 @@ WHERE posts_id="'.$post_id.'"');
     return $comments_on_post;
 }
 
-//function blogPostCreate ($db, ) {
-//
-//}
+function blogPostCreate ($db, $title, $text, $importance, $startdate, $enddate ) {
+    $db->exec('INSERT INTO posts (title, text, importance, publication_date_start, publication_date_end)
+VALUES ("'.$title.'", "'.$text.'", "'.$importance.'", "'.$startdate.'", "'.$enddate.'")');
+echo "Votre article a bien été publié";
+}
