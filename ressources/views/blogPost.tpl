@@ -1,4 +1,4 @@
-<?php require 'header.tpl';?>
+<?php require 'header.tpl.php';?>
 
 <main>
     <?php if (isset($id_post)): ?>
@@ -25,4 +25,4 @@
 </main>
 
 
-<?php require 'footer.tpl'; ?>
+<?php require 'footer.tpl.php'; ?>
