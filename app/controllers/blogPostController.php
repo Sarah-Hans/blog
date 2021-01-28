@@ -9,4 +9,4 @@ if(filter_has_var(INPUT_GET,'id')) {
 else {
     echo "Il n'y a pas d'article ici.";
 }
-include 'ressources/views/blogPost.tpl.php';
+include 'ressources/views/blogPost.tpl';

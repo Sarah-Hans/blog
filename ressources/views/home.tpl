@@ -6,10 +6,10 @@
     foreach ($theposts as $row): ?>
         <article class="home_post">
             <header class="post_header">
-                <h2 class="post_title"><?php echo $row['title']?></h2>
-                <p class="post_author">Article écrit par <?php echo $row['nickname']?></p>
+                <a href="index.php?action=blogpost&id=<?php echo $row['id']; ?>"><h2 class="post_title"><?php echo $row['title']; ?></h2></a>
+                <p class="post_author">Article écrit par <?php echo $row['nickname']; ?></p>
             </header>
-            <p class="post_content"><?php echo $row['text']?></p>
+            <p class="post_content"><?php echo $row['text']; ?></p>
         </article>
     <?php endforeach; ?>
 <?php endif; ?>

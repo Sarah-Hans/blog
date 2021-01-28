@@ -2,7 +2,7 @@
 
 //Fonction qui sélectionne les 10 derniers articles dans la base et les affiche
 function lastBlogPosts($db) {
-    $posts = $db->query('SELECT title, text, nickname
+    $posts = $db->query('SELECT posts.id, title, text, nickname
 FROM posts INNER JOIN authors
                       ON posts.authors_id = authors.id
 ORDER BY publication_date_start DESC
@@ -28,3 +28,7 @@ WHERE posts_id="'.$post_id.'"');
     $comments_on_post = $comments_on_post->fetchALL(PDO::FETCH_ASSOC);
     return $comments_on_post;
 }
+
+//function blogPostCreate ($db, ) {
+//
+//}
