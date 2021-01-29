@@ -11,6 +11,7 @@ ORDER BY publication_date_start DESC
     return $posts;
 }
 
+//Fonction qui affiche un article en fonction de son id
 function blogPostById($db, $post_id) {
     $post_unique = $db->query('SELECT posts.id, title, text, nickname
 FROM posts INNER JOIN authors
@@ -20,6 +21,7 @@ WHERE posts.id ="'.$post_id.'"');
     return $post_unique;
 }
 
+//Fonction qui affiche les commentaires sur l'article
 function commentsByBlogPost($db, $post_id) {
     $comments_on_post = $db->query('SELECT posts_id, authors_id, text, nickname
 FROM comments INNER JOIN authors
@@ -29,8 +31,14 @@ WHERE posts_id="'.$post_id.'"');
     return $comments_on_post;
 }
 
-function blogPostCreate ($db, $title, $text, $importance, $startdate, $enddate ) {
-    $db->exec('INSERT INTO posts (title, text, importance, publication_date_start, publication_date_end)
-VALUES ("'.$title.'", "'.$text.'", "'.$importance.'", "'.$startdate.'", "'.$enddate.'")');
-echo "Votre article a bien été publié";
+//Fonction qui permet d'envoyer les données de création de l'article dans la base de données
+function blogPostCreate ($db, $title, $text, $importance, $startdate, $enddate, $authorid ) {
+    $sql = 'INSERT INTO posts (title, text, importance, publication_date_start, publication_date_end, authors_id)
+VALUES ("'.$title.'", "'.$text.'", "'.$importance.'", "'.$startdate.'", "'.$enddate.'", "'.$authorid.'")';
+    $count = $db->exec($sql);
+    $db = null; // Disconnect
+
+    if ($count !== false) {
+        echo 'Publié ! Nombre de ligne(s) ajoutée(s) : ' . $count;
+    }
 }

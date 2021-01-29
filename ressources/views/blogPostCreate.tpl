@@ -21,6 +21,17 @@
             <label for="date_fin">Date de fin de publication</label><br>
             <input type="date" name="date_fin">
         </div>
+        <div>
+            <label for="author">Publier l'article en tant que :</label><br>
+            <select name="author">
+                <option value="">--Sélectionnez un auteur--</option>
+                <option value="1">Matéo</option>
+                <option value="2">Valentine</option>
+                <option value="3">Jdupont</option>
+                <option value="4">JJGoldman</option>
+                <option value="5">SHans</option>
+            </select>
+        </div>
         <div class="bouton">
             <button type="submit" name="bouton">Publier</button>
         </div>
