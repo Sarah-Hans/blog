@@ -13,7 +13,7 @@ ORDER BY publication_date_start DESC
 
 //Fonction qui affiche un article en fonction de son id
 function blogPostById($db, $post_id) {
-    $post_unique = $db->query('SELECT posts.id, title, text, nickname
+    $post_unique = $db->query('SELECT posts.id, title, text, importance, publication_date_start, publication_date_end, nickname
 FROM posts INNER JOIN authors
                       ON posts.authors_id = authors.id
 WHERE posts.id ="'.$post_id.'"');
@@ -40,5 +40,17 @@ VALUES ("'.$title.'", "'.$text.'", "'.$importance.'", "'.$startdate.'", "'.$endd
 
     if ($count !== false) {
         echo 'Publié ! Nombre de ligne(s) ajoutée(s) : ' . $count;
+    }
+}
+
+//Fonction qui permet de modifier un article existant en fonction de son id
+function blogPostUpdate ($db, $post_id, $title, $text, $importance, $startdate, $enddate, $authorid) {
+    $sql = 'UPDATE posts 
+    SET title = "'.$title.'", text = "'.$text.'", importance = "'.$importance.'", publication_date_start = "'.$startdate.'", publication_date_end = "'.$enddate.'", authors_id = "'.$authorid.'"
+    WHERE id = "'.$post_id.'"';
+    $update_post = $db->exec($sql);
+    $db = null;
+    if ($update_post !== false) {
+        echo 'Votre article a été mis à jours !';
     }
 }

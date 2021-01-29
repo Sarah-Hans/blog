@@ -15,6 +15,7 @@ $map = [
     'home' => 'homeController.php',
     'blogpost' =>'blogPostController.php',
     'create' => 'blogPostCreateController.php',
+    'blogPostModify' => 'blogPostModifyController.php',
     '404' => '404.php'
 ];
 //Condition qui détermine le contenu à afficher en fonction des paramètres $action demandés (ou non)
